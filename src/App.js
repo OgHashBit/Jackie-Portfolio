@@ -1,13 +1,14 @@
-import React, {Suspense, useRef} from 'react';
+import React, { Suspense, useRef } from 'react';
 import styled from "styled-components";
 import HeroBackground from './components/Background';
 import TextSection from './components/TextSection';
 import Box from './components/Box';
-import {Canvas} from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from "@react-three/drei"
 import AnimatedSphere from './components/AnimatedSphere';
 import Lofi from './components/Lofi';
-import { Camera } from 'three';
+import { Camera, Box2, MeshPhysicalMaterial } from 'three';
+import { Sphere, Stars, Plane } from "@react-three/drei";
 
 function App() {
 
@@ -15,17 +16,19 @@ function App() {
     <div>
       {/* <HeroBackground/> */}
       <div className="canvas-container">
-      <Canvas className="canvas">
-      <OrbitControls enableZoom={false}/>
-        <ambientLight intensity={0.5}/>
-        <spotLight position={[-2, 5, 2]} intensity={1}/>
-        <directionalLight position={[-2, 5, 2]} intensity={1}/>
-        <Suspense fallback={null}>
-        <AnimatedSphere/>
-        </Suspense>
-      </Canvas>
+        <Canvas className="canvas">
+          <OrbitControls enableZoom={true} />
+          <ambientLight intensity={0.5} />
+          <spotLight position={[-2, 5, 2]} intensity={1} />
+          <directionalLight position={[-2, 5, 2]} intensity={1} />
+          <Suspense fallback={null}>
+            <AnimatedSphere/>
+            {/* <Stars /> */}
+
+          </Suspense>
+        </Canvas>
       </div>
-      <TextSection/>
+      <TextSection />
       {/* <Canvas className="canvas">
       <OrbitControls enableZoom={false}/>
         <ambientLight intensity={0.5}/>
@@ -34,7 +37,6 @@ function App() {
         <Box/>
         </Suspense>
       </Canvas> */}
-
 
     </div>
   );

@@ -20,10 +20,10 @@ body {
 
 .canvas-container {
   position: fixed;
-  top: 50%;
-  right: 20%;
-  left: 20%;
-  height: 50vh;
+  top: 60%;
+  right: 0;
+  left: 0;
+  height: 100vh;
   z-index: 1;
   pointer-events: none;
 }
@@ -42,7 +42,7 @@ a :hover, a :active {
 }
 main {
   /* visibility: hidden; */
-  display: grid;
+  display: table;
   grid-template-columns: 1fr 6fr 4fr 1fr;
   grid-template-rows: 1fr 3fr auto;
   grid-template-areas:
@@ -63,7 +63,19 @@ main {
   grid-area: header;
   align-self: end;
 }
+.header {
+  display: flex;
+  margin: 5%;
+}
 
+.leftHaft {
+  flex: 1;
+  display: 1rem;
+}
+.rightHaft {
+  flex: 1;
+  display: 1rem;
+}
 .type-primary {
     font-weight: var(--f-weight);
     font-size: 2rem;

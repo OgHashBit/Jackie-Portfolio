@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Lofi({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/lofi.glb')
+  const { nodes, materials } = useGLTF('/lofi.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -50,4 +50,4 @@ export default function Lofi({ ...props }) {
   )
 }
 
-useGLTF.preload('/lofi.glb')
+useGLTF.preload('/lofi.gltf')
